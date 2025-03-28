@@ -14,7 +14,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-# 项目名称 🚀
+# archlinux i3 🚀
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) 
 [![GitHub Stars](https://img.shields.io/github/stars/yourname/repo?style=social)](https://github.com/yourname/repo)
