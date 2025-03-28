@@ -36,7 +36,9 @@ Here are some ideas to get you started:
 ```bash
 # 通过 AUR 安装（推荐）
 yay -S archlinux-rofi-config-git
+yay -S polybar
+yay -S picom-ftlabs-git
 
 # 或手动安装
-git clone https://github.com/yourusername/archlinux-rofi-config.git ~/.config/rofi
+git clone https://github.com/Rancade/rancade.git ~/.config/rofi
 cp -r rancade/.config/*  ~/.config/
