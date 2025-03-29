@@ -1,0 +1,143 @@
+/**
+ * Catppuccin Rofi Theme - Optimized Edition
+ * 保持原视觉效果的精简重构版
+ */
+configuration {
+    // 输入模式配置
+    modi:                       "drun";
+    display-drun:               "";  // FontAwesome搜索图标
+    display-clipboard:          "";   // 禁用剪贴板指示器
+    drun-display-format:        "{name}";
+}
+
+// 继承Catppuccin配色方案
+@import "~/.config/i3/themes/catppuccin/rofi/colors.rasi"
+
+/* ========== 全局样式 ========== */
+* {
+    // 基础重置
+    border:             0;
+    margin:            0;
+    padding:           0;
+    spacing:          0;
+    separatorcolor:    transparent;
+    
+    // 字体配置
+    font:             "Source Code Pro 10";
+    
+    // 背景色继承
+    background-color: @black;
+}
+
+/* ========== 窗口布局 ========== */
+window {
+    // 几何尺寸
+    width:          400px;
+    height:         500px;
+    x-offset:      -479px;  // 精确右对齐偏移
+    y-offset:      -106px;
+    
+    // 视觉样式
+    border-radius:  0;
+    border:         0;
+    padding:        10;
+    background-color: @bg;
+}
+
+/* ========== 主容器 ========== */
+mainbox {
+    background-color: @bg;
+    padding:        0;
+    children:       [inputbar, listview];  // 垂直布局
+}
+
+/* ========== 输入栏 ========== */
+inputbar {
+    // 子元素布局
+    children:       [prompt, entry];
+    
+    // 视觉样式
+    background-color: @black;
+    border-radius:   10;
+    margin:         10 0;
+}
+
+prompt {
+    // 文本样式
+    font:           "Source Code Pro 10";
+    text-color:     @fg;
+    
+    // 布局
+    padding:        5 10 0 10;
+    border-radius:  0;
+    background-color: @black;
+}
+
+entry {
+    // 输入框样式
+    background-color: transparent;
+    text-color:      @fg;
+    placeholder-color: @fg;
+    placeholder:     "Search...";
+    
+    // 交互效果
+    blink:          false;
+    padding:        4;
+}
+
+/* ========== 列表视图 ========== */
+listview {
+    // 布局控制
+    columns:        1;
+    lines:         7;
+    margin:        8 0 0 0;
+    padding:       2 0;
+    
+    // 视觉样式
+    scrollbar:     false;
+    background-color: @bg;
+}
+
+/* ========== 列表项 ========== */
+element {
+    // 基础样式
+    padding:        10;
+    border-radius:  10;
+    background-color: rgba(0,0,0,0);
+    
+    // 文本容器
+    element-text {
+        vertical-align:   0.5;
+        horizontal-align: 0;
+        expand:           true;
+        background-color: inherit;
+        text-color:       inherit;
+    }
+    
+    // 图标样式
+    element-icon {
+        padding:        0 10 0 0;
+        background-color: inherit;
+        text-color:     @fg;
+    }
+}
+
+/* ========== 状态样式 ========== */
+// 常规状态
+element.normal.normal,
+element.normal.urgent,
+element.normal.active,
+element.alternate.normal,
+element.alternate.urgent,
+element.alternate.active {
+    background-color: @bg;
+    text-color:      @fg;
+}
+
+// 选中状态
+element.selected.normal,
+element.selected.urgent,
+element.selected.active {
+    background-color: @black;
+    text-color:      @fg;
+} 
